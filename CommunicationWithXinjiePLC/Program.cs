@@ -20,13 +20,13 @@ namespace CommunicationWithXinjiePLC
             {
                 i++;
                 System.Threading.Thread.Sleep(10);
-                //IsPLCConnect = Xinjie.ReadSM(0);
+                IsPLCConnect = Xinjie.ReadSM(0);
                 //Console.WriteLine(IsPLCConnect.ToString());
-                IsPLCConnect = Xinjie.ReadM(24576);
+                //IsPLCConnect = Xinjie.ReadM(24576);
                 if (IsPLCConnect)
                 {
-                    Xinjie.WriteD(2, "-59");
-                    double a = Xinjie.ReadD(2);
+                    Xinjie.WriteW(2, "58");
+                    double a = Xinjie.ReadW(2);
                     Console.WriteLine(a.ToString());
                 }
                 else
